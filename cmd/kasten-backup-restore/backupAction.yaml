@@ -1,0 +1,13 @@
+kind: BackupAction
+apiVersion: actions.kio.kasten.io/v1alpha1
+metadata:
+  name: {backup_name}
+  namespace: {include_ns}
+  labels:
+    k10.kasten.io/doNotRetire: "true"
+    k10.kasten.io/policyName: {policy_name}
+    k10.kasten.io/policyNamespace: {backup_ns}
+spec:
+  subject:
+    name: {include_ns}
+    namespace: {include_ns}

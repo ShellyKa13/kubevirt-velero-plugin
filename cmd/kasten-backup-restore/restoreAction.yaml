@@ -1,0 +1,16 @@
+apiVersion: actions.kio.kasten.io/v1alpha1
+kind: RestoreAction
+metadata:
+  labels:
+    k10.kasten.io/appName: {restore_ns}
+    k10.kasten.io/appNamespace: {restore_ns}
+  name: {restore_name}
+  namespace: {restore_ns}
+spec:
+  subject:
+    apiVersion: apps.kio.kasten.io/v1alpha1
+    kind: RestorePoint
+    name: {restore_point}
+    namespace: {restore_ns}
+  targetNamespace: {restore_ns}
+

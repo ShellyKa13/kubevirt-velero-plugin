@@ -1,0 +1,15 @@
+apiVersion: config.kio.kasten.io/v1alpha1
+kind: Policy
+metadata:
+  name: {policy_name}
+  namespace: {policy_ns}
+spec:
+  actions:
+  - action: backup
+  frequency: '@onDemand'
+  selector:
+    matchExpressions:
+    - key: k10.kasten.io/appNamespace
+      operator: In
+      values:
+      - {include-namespaces}
